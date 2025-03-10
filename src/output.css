@@ -6,14 +6,22 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-400: oklch(0.704 0.191 22.216);
     --color-red-500: oklch(0.637 0.237 25.331);
     --color-orange-400: oklch(0.75 0.183 55.934);
+    --color-amber-100: oklch(0.962 0.059 95.617);
     --color-amber-500: oklch(0.769 0.188 70.08);
     --color-amber-900: oklch(0.414 0.112 45.904);
+    --color-amber-950: oklch(0.279 0.077 45.635);
     --color-yellow-300: oklch(0.905 0.182 98.111);
+    --color-cyan-800: oklch(0.45 0.085 224.283);
+    --color-cyan-900: oklch(0.398 0.07 227.392);
     --color-blue-600: oklch(0.546 0.245 262.881);
     --color-blue-700: oklch(0.488 0.243 264.376);
     --color-blue-900: oklch(0.379 0.146 265.522);
+    --color-rose-300: oklch(0.81 0.117 11.638);
+    --color-rose-500: oklch(0.645 0.246 16.439);
+    --color-rose-600: oklch(0.586 0.253 17.585);
     --color-gray-100: oklch(0.967 0.003 264.542);
     --color-gray-700: oklch(0.373 0.034 259.733);
     --color-gray-800: oklch(0.278 0.033 256.848);
@@ -363,6 +371,9 @@
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
   }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
   .box-border {
     box-sizing: border-box;
   }
@@ -476,6 +487,9 @@
   }
   .w-48 {
     width: calc(var(--spacing) * 48);
+  }
+  .w-50 {
+    width: calc(var(--spacing) * 50);
   }
   .w-screen {
     width: 100vw;
@@ -606,6 +620,9 @@
   }
   .animate-spin {
     animation: var(--animate-spin);
+  }
+  .cursor-cell {
+    cursor: cell;
   }
   .cursor-pointer {
     cursor: pointer;
@@ -880,11 +897,32 @@
       --tw-space-y-reverse: 1;
     }
   }
+  .space-x-2 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+  .space-x-5 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 5) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
   .space-x-6 {
     :where(& > :not(:last-child)) {
       --tw-space-x-reverse: 0;
       margin-inline-start: calc(calc(var(--spacing) * 6) * var(--tw-space-x-reverse));
       margin-inline-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+  .space-x-7 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 7) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 7) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
   .space-x-reverse {
@@ -1107,6 +1145,9 @@
   }
   .bg-\[var\(--my_variable\)\] {
     background-color: var(--my_variable);
+  }
+  .bg-amber-100 {
+    background-color: var(--color-amber-100);
   }
   .bg-amber-500 {
     background-color: var(--color-amber-500);
@@ -1474,17 +1515,29 @@
   .text-amber-900 {
     color: var(--color-amber-900);
   }
+  .text-amber-950 {
+    color: var(--color-amber-950);
+  }
   .text-blue-700 {
     color: var(--color-blue-700);
   }
   .text-blue-900 {
     color: var(--color-blue-900);
   }
+  .text-cyan-800 {
+    color: var(--color-cyan-800);
+  }
   .text-gray-700 {
     color: var(--color-gray-700);
   }
   .text-gray-800 {
     color: var(--color-gray-800);
+  }
+  .text-red-400 {
+    color: var(--color-red-400);
+  }
+  .text-rose-600 {
+    color: var(--color-rose-600);
   }
   .capitalize {
     text-transform: capitalize;
@@ -1935,6 +1988,34 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-gray-100);
+      }
+    }
+  }
+  .hover\:bg-red-400 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-red-400);
+      }
+    }
+  }
+  .hover\:bg-rose-300 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-rose-300);
+      }
+    }
+  }
+  .hover\:bg-rose-500 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-rose-500);
+      }
+    }
+  }
+  .hover\:text-cyan-900 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-cyan-900);
       }
     }
   }
